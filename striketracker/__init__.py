@@ -17,7 +17,7 @@ class ConfigurationCache():
     def __init__(self, filename=None):
         self.cache = None
         self.filename = filename if filename is not None else os.path.join(expanduser('~'), '.highwinds')
-        os.open(self.filename, os.O_RDONLY | os.O_CREAT, 0o0600)
+        os.open(self.filename, os.O_RDONLY | os.O_CREAT, 0o600)
 
     def read(self):
         with open(self.filename, 'r') as f:
